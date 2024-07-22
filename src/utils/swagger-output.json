@@ -1,0 +1,2568 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Description",
+    "version": "1.0.0"
+  },
+  "host": "192.168.18.146:5000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/auth/register": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/auth/user-info": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/auth/technician": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/auth/technician/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/auth/all-users-t": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/qr/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/qr/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/qr/act/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/client/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "barcode": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/client/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/sample/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "barcode": {
+                  "example": "any"
+                },
+                "client": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/sample/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/category/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/category/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/item/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/item/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/product/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/report/product/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Client": {
+      "type": "object",
+      "properties": {
+        "firstname": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "lastname": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "state": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "zip": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "country": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "phone_no": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "email": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "barcode": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "ref": {
+              "type": "string",
+              "example": "BarCode"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            },
+            "unique": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "pet": {
+          "type": "object",
+          "properties": {
+            "obj": {
+              "type": "object",
+              "properties": {
+                "pet_name": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "type": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "enum": {
+                      "type": "array",
+                      "example": [
+                        "dog",
+                        "cat"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "gender": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "enum": {
+                      "type": "array",
+                      "example": [
+                        "M",
+                        "F"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "dob": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "age": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "breed": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "birth_place": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                }
+              }
+            },
+            "paths": {
+              "type": "object",
+              "properties": {
+                "pet_name": {
+                  "type": "object",
+                  "properties": {
+                    "enumValues": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "regExp": {},
+                    "path": {
+                      "type": "string",
+                      "example": "pet_name"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "String"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "validator": {
+                            "type": "function"
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Path `{PATH}` is required."
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "required"
+                          }
+                        }
+                      }
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "pet_name"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "function"
+                        },
+                        "required": {
+                          "type": "boolean",
+                          "example": true
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "isRequired": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "requiredValidator": {
+                      "type": "function"
+                    },
+                    "originalRequiredValue": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "type": {
+                  "type": "object",
+                  "properties": {
+                    "enumValues": {
+                      "type": "array",
+                      "example": [
+                        "dog",
+                        "cat"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "regExp": {},
+                    "path": {
+                      "type": "string",
+                      "example": "type"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "String"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "validator": {
+                            "type": "function"
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "`{VALUE}` is not a valid enum value for path `{PATH}`."
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "enum"
+                          },
+                          "enumValues": {
+                            "type": "array",
+                            "example": [
+                              "dog",
+                              "cat"
+                            ],
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "type"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "function"
+                        },
+                        "required": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "enum": {
+                          "type": "array",
+                          "example": [
+                            "dog",
+                            "cat"
+                          ],
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "isRequired": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "requiredValidator": {
+                      "type": "function"
+                    },
+                    "originalRequiredValue": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "enumValidator": {
+                      "type": "function"
+                    }
+                  }
+                },
+                "gender": {
+                  "type": "object",
+                  "properties": {
+                    "enumValues": {
+                      "type": "array",
+                      "example": [
+                        "M",
+                        "F"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "regExp": {},
+                    "path": {
+                      "type": "string",
+                      "example": "gender"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "String"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "validator": {
+                            "type": "function"
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "`{VALUE}` is not a valid enum value for path `{PATH}`."
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "enum"
+                          },
+                          "enumValues": {
+                            "type": "array",
+                            "example": [
+                              "M",
+                              "F"
+                            ],
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "gender"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "function"
+                        },
+                        "required": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "enum": {
+                          "type": "array",
+                          "example": [
+                            "M",
+                            "F"
+                          ],
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "isRequired": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "requiredValidator": {
+                      "type": "function"
+                    },
+                    "originalRequiredValue": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "enumValidator": {
+                      "type": "function"
+                    }
+                  }
+                },
+                "dob": {
+                  "type": "object",
+                  "properties": {
+                    "enumValues": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "regExp": {},
+                    "path": {
+                      "type": "string",
+                      "example": "dob"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "String"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "validator": {
+                            "type": "function"
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Path `{PATH}` is required."
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "required"
+                          }
+                        }
+                      }
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "dob"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "function"
+                        },
+                        "required": {
+                          "type": "boolean",
+                          "example": true
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "isRequired": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "requiredValidator": {
+                      "type": "function"
+                    },
+                    "originalRequiredValue": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "age": {
+                  "type": "object",
+                  "properties": {
+                    "enumValues": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "regExp": {},
+                    "path": {
+                      "type": "string",
+                      "example": "age"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "String"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "validator": {
+                            "type": "function"
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Path `{PATH}` is required."
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "required"
+                          }
+                        }
+                      }
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "age"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "function"
+                        },
+                        "required": {
+                          "type": "boolean",
+                          "example": true
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "isRequired": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "requiredValidator": {
+                      "type": "function"
+                    },
+                    "originalRequiredValue": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "breed": {
+                  "type": "object",
+                  "properties": {
+                    "enumValues": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "regExp": {},
+                    "path": {
+                      "type": "string",
+                      "example": "breed"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "String"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "validator": {
+                            "type": "function"
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Path `{PATH}` is required."
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "required"
+                          }
+                        }
+                      }
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "breed"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "function"
+                        },
+                        "required": {
+                          "type": "boolean",
+                          "example": true
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "isRequired": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "requiredValidator": {
+                      "type": "function"
+                    },
+                    "originalRequiredValue": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "birth_place": {
+                  "type": "object",
+                  "properties": {
+                    "enumValues": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "regExp": {},
+                    "path": {
+                      "type": "string",
+                      "example": "birth_place"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "String"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "validator": {
+                            "type": "function"
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Path `{PATH}` is required."
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "required"
+                          }
+                        }
+                      }
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "birth_place"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "function"
+                        },
+                        "required": {
+                          "type": "boolean",
+                          "example": true
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "isRequired": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "requiredValidator": {
+                      "type": "function"
+                    },
+                    "originalRequiredValue": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "_id": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "example": "_id"
+                    },
+                    "instance": {
+                      "type": "string",
+                      "example": "ObjectId"
+                    },
+                    "validators": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [
+                        null
+                      ],
+                      "items": {
+                        "type": "function"
+                      }
+                    },
+                    "_presplitPath": {
+                      "type": "array",
+                      "example": [
+                        "_id"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {
+                        "auto": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "type": {
+                          "type": "string",
+                          "example": "ObjectId"
+                        }
+                      }
+                    },
+                    "_index": {},
+                    "defaultValue": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "aliases": {
+              "type": "object",
+              "properties": {}
+            },
+            "subpaths": {
+              "type": "object",
+              "properties": {}
+            },
+            "virtuals": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "example": "id"
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [
+                        null
+                      ],
+                      "items": {
+                        "type": "function"
+                      }
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            },
+            "singleNestedPaths": {
+              "type": "object",
+              "properties": {}
+            },
+            "nested": {
+              "type": "object",
+              "properties": {}
+            },
+            "inherits": {
+              "type": "object",
+              "properties": {}
+            },
+            "callQueue": {
+              "type": "array",
+              "example": [],
+              "items": {}
+            },
+            "_indexes": {
+              "type": "array",
+              "example": [],
+              "items": {}
+            },
+            "methods": {
+              "type": "object",
+              "properties": {}
+            },
+            "methodOptions": {
+              "type": "object",
+              "properties": {}
+            },
+            "statics": {
+              "type": "object",
+              "properties": {}
+            },
+            "tree": {
+              "type": "object",
+              "properties": {
+                "pet_name": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "type": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "enum": {
+                      "type": "array",
+                      "example": [
+                        "dog",
+                        "cat"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "gender": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "enum": {
+                      "type": "array",
+                      "example": [
+                        "M",
+                        "F"
+                      ],
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "dob": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "age": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "breed": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "birth_place": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "function"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "_id": {
+                  "type": "object",
+                  "properties": {
+                    "auto": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "ObjectId"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "example": "id"
+                    },
+                    "getters": {
+                      "type": "array",
+                      "example": [
+                        null
+                      ],
+                      "items": {
+                        "type": "function"
+                      }
+                    },
+                    "setters": {
+                      "type": "array",
+                      "example": [],
+                      "items": {}
+                    },
+                    "options": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            },
+            "query": {
+              "type": "object",
+              "properties": {}
+            },
+            "childSchemas": {
+              "type": "array",
+              "example": [],
+              "items": {}
+            },
+            "plugins": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "fn": {
+                    "type": "function"
+                  },
+                  "opts": {
+                    "type": "object",
+                    "properties": {
+                      "deduplicate": {
+                        "type": "boolean",
+                        "example": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "id": {
+              "type": "number",
+              "example": 1
+            },
+            "mapPaths": {
+              "type": "array",
+              "example": [],
+              "items": {}
+            },
+            "s": {
+              "type": "object",
+              "properties": {
+                "hooks": {
+                  "type": "object",
+                  "properties": {
+                    "_pres": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "_posts": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            },
+            "_userProvidedOptions": {
+              "type": "object",
+              "properties": {}
+            },
+            "options": {
+              "type": "object",
+              "properties": {
+                "typeKey": {
+                  "type": "string",
+                  "example": "type"
+                },
+                "id": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "_id": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "validateBeforeSave": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "read": {},
+                "shardKey": {},
+                "discriminatorKey": {
+                  "type": "string",
+                  "example": "__t"
+                },
+                "autoIndex": {},
+                "minimize": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "optimisticConcurrency": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "versionKey": {
+                  "type": "string",
+                  "example": "__v"
+                },
+                "capped": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "bufferCommands": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "strictQuery": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "strict": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            },
+            "globalPluginsApplied": {
+              "type": "boolean",
+              "example": true
+            }
+          },
+          "required": [
+            "id",
+            "globalPluginsApplied"
+          ]
+        },
+        "expedite_results": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "default": {
+              "type": "boolean",
+              "example": false
+            }
+          }
+        }
+      }
+    },
+    "BarCode": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            },
+            "unique": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "activated": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "default": {
+              "type": "boolean",
+              "example": false
+            }
+          }
+        }
+      }
+    },
+    "ReportItemCategory": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        }
+      }
+    },
+    "ReportItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "category": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "ref": {
+              "type": "string",
+              "example": "ReportItemCatgeory"
+            }
+          }
+        }
+      }
+    },
+    "ProductItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "description": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        }
+      }
+    },
+    "Report": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "ref": {
+              "type": "string",
+              "example": "User"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "function"
+                  },
+                  "ref": {
+                    "type": "string",
+                    "example": "ReportItem"
+                  }
+                }
+              },
+              "senstivity": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "function"
+                  },
+                  "enum": {
+                    "type": "array",
+                    "example": [
+                      "HG",
+                      "MD"
+                    ],
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "default": {
+                    "type": "string",
+                    "example": "MD"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "function"
+              },
+              "ref": {
+                "type": "string",
+                "example": "ProductItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sample": {
+      "type": "object",
+      "properties": {
+        "sampleStatus": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "enum": {
+              "type": "array",
+              "example": [
+                "REC",
+                "ASS",
+                "SUB"
+              ],
+              "items": {
+                "type": "string"
+              }
+            },
+            "default": {
+              "type": "string",
+              "example": "REC"
+            }
+          }
+        },
+        "client": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "ref": {
+              "type": "string",
+              "example": "Client"
+            },
+            "unique": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "technician": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "ref": {
+              "type": "string",
+              "example": "User"
+            }
+          }
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "email": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "unique": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        },
+        "password": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "required": {
+              "type": "boolean",
+              "example": true
+            },
+            "select": {
+              "type": "boolean",
+              "example": false
+            }
+          }
+        },
+        "role": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "function"
+            },
+            "enum": {
+              "type": "array",
+              "example": [
+                "AD",
+                "TN"
+              ],
+              "items": {
+                "type": "string"
+              }
+            },
+            "default": {
+              "type": "string",
+              "example": "TN"
+            }
+          }
+        }
+      }
+    }
+  }
+}
