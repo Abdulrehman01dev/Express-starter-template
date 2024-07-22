@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  biopet:
+    build: .
+    container_name: "biopet"
+    command: bash -c "node src/index.js"
+    volumes:
+      - ./:/usr/src/app/
+      - /usr/src/app/node_modules
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+     
