@@ -12,6 +12,7 @@ const signToken = (id) => {
   });
 };
 
+/// Testing
 const createSendToken = (user, statusCode, res) => {
   user=user.toObject()
   const excludedFields = ["password", "passwordChangedAt"];
